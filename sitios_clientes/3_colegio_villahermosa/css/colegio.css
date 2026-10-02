@@ -1,0 +1,461 @@
+/* Colegio Villahermosa y María Teresa: Sistema de Diseño Institucional de Prestigio */
+:root {
+  --navy-deep: #0a1f33;
+  --navy-royal: #133353;
+  --gold-crest: #c59b27;
+  --gold-light: #fef3c7;
+  --ivory-bg: #fcfbf9;
+  --card-white: #ffffff;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --border-academic: #e2e8f0;
+  --shadow-prestige: 0 4px 20px rgba(10, 31, 51, 0.08);
+  --shadow-hover: 0 12px 30px rgba(10, 31, 51, 0.15);
+  --radius-academic: 12px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Georgia", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, serif;
+  background-color: var(--ivory-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Barra Superior de Preinscripciones y CCT Oficial */
+.school-top-ribbon {
+  background: var(--navy-deep);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.school-top-ribbon strong {
+  color: var(--gold-crest);
+}
+
+/* Header Escolar */
+.school-header {
+  background: #ffffff;
+  border-bottom: 2px solid var(--gold-crest);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-prestige);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.school-crest-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.school-crest-emblem {
+  width: 52px;
+  height: 52px;
+  background: var(--navy-deep);
+  border: 2px solid var(--gold-crest);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-crest);
+  box-shadow: 0 4px 10px rgba(197, 155, 39, 0.25);
+}
+
+.school-titles h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+  line-height: 1.1;
+  letter-spacing: -0.3px;
+}
+
+.school-titles span {
+  font-size: 0.75rem;
+  color: var(--gold-crest);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn-admision-top {
+  background: var(--navy-deep);
+  color: var(--gold-crest);
+  border: 1px solid var(--gold-crest);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-admision-top:hover {
+  background: var(--gold-crest);
+  color: var(--navy-deep);
+}
+
+/* Hero Section Prestigio */
+.academic-hero {
+  background: linear-gradient(135deg, rgba(10,31,51,0.92), rgba(19,51,83,0.88)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80') center/cover;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.hero-box-prestige {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.motto-banner {
+  display: inline-block;
+  background: rgba(197, 155, 39, 0.2);
+  border: 1px solid var(--gold-crest);
+  color: var(--gold-crest);
+  padding: 4px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.hero-main-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.hero-main-title span {
+  color: var(--gold-crest);
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.hero-ctas-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn-primary-crest {
+  background: var(--gold-crest);
+  color: #0a1f33;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-primary-crest:hover {
+  background: #d4a733;
+  transform: translateY(-2px);
+}
+
+.btn-wa-admissions {
+  background: #25d366;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-wa-admissions:hover {
+  background: #1eb956;
+}
+
+/* Niveles Educativos */
+.academic-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.academic-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.academic-heading h2 {
+  font-size: 2.1rem;
+  color: var(--navy-deep);
+  margin-bottom: 6px;
+}
+
+.academic-heading p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.levels-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.level-box {
+  background: #ffffff;
+  border: 1px solid var(--border-academic);
+  border-radius: var(--radius-academic);
+  padding: 24px;
+  box-shadow: var(--shadow-prestige);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.level-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-crest);
+  box-shadow: var(--shadow-hover);
+}
+
+.level-tag-top {
+  color: var(--gold-crest);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.level-box h3 {
+  font-size: 1.3rem;
+  color: var(--navy-deep);
+  margin-bottom: 8px;
+  font-family: "Georgia", serif;
+}
+
+.level-desc-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.level-bullet-points {
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.level-bullet-points li::before {
+  content: "✦";
+  color: var(--gold-crest);
+  margin-right: 6px;
+}
+
+.level-footer-row {
+  border-top: 1px solid var(--border-academic);
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tuition-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.tuition-amount {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-deep);
+}
+
+/* Tour Virtual Tabs */
+.tour-wrapper-box {
+  background: #ffffff;
+  border: 1px solid var(--border-academic);
+  border-radius: var(--radius-academic);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-prestige);
+  margin: 40px 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.tour-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.tour-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--border-academic);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tour-btn.active, .tour-btn:hover {
+  background: var(--navy-deep);
+  color: var(--gold-crest);
+  border-color: var(--navy-deep);
+}
+
+.tour-content-display {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .tour-content-display {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tour-photo-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tour-desc-text h4 {
+  font-size: 1.35rem;
+  color: var(--navy-deep);
+  margin-bottom: 10px;
+  font-family: "Georgia", serif;
+}
+
+/* Formulario de Preinscripción a WhatsApp */
+.admission-card-form {
+  background: var(--navy-deep);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 28px;
+  box-shadow: 0 10px 30px rgba(10, 31, 51, 0.3);
+  max-width: 860px;
+  margin: 60px auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.admission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.adm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.adm-field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold-crest);
+}
+
+.adm-input, .adm-select {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.adm-select option {
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.btn-send-admission-wa {
+  grid-column: 1 / -1;
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  transition: var(--transition);
+}
+
+.btn-send-admission-wa:hover {
+  background: #1eb956;
+}
+
+/* Footer Escolar */
+.school-footer {
+  background: #061422;
+  color: #94a3b8;
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}

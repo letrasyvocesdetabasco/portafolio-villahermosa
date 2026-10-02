@@ -1,0 +1,440 @@
+/* City Garage JJ: Sistema de Diseño Motor Tech & Garage de Alto Rendimiento */
+:root {
+  --racing-red: #e11d48;
+  --racing-red-hover: #be123c;
+  --carbon-dark: #09090b;
+  --carbon-surface: #18181b;
+  --carbon-card: #27272a;
+  --text-pure: #ffffff;
+  --text-muted: #a1a1aa;
+  --border-carbon: #3f3f46;
+  --accent-lime: #84cc16;
+  --radius-garage: 10px;
+  --shadow-garage: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--carbon-dark);
+  color: #f4f4f5;
+  line-height: 1.5;
+}
+
+/* Banner de Auxilio Vial en Tamulté */
+.top-garage-alert {
+  background: var(--racing-red);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-garage-alert a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Header Garage */
+.garage-header {
+  background: var(--carbon-surface);
+  border-bottom: 2px solid var(--racing-red);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-garage);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.garage-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.garage-logo-badge {
+  width: 48px;
+  height: 48px;
+  background: var(--racing-red);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+}
+
+.garage-titles h1 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+}
+
+.garage-titles span {
+  font-size: 0.72rem;
+  color: var(--racing-red);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-book-bay {
+  background: var(--racing-red);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-book-bay:hover {
+  background: var(--racing-red-hover);
+  transform: translateY(-2px);
+}
+
+/* Hero Section High-Performance */
+.garage-hero {
+  background: linear-gradient(135deg, rgba(9,9,11,0.95), rgba(24,24,27,0.9)), url('https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80') center/cover;
+  padding: 60px 20px;
+  border-bottom: 1px solid var(--border-carbon);
+}
+
+.hero-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.pill-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(225, 29, 72, 0.15);
+  border: 1px solid var(--racing-red);
+  color: var(--racing-red);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.hero-title span {
+  color: var(--racing-red);
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero-ctas {
+    justify-content: center;
+  }
+}
+
+.btn-emergency-call {
+  background: var(--racing-red);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-emergency-call:hover {
+  background: var(--racing-red-hover);
+}
+
+.btn-wa-garage {
+  background: #25d366;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-wa-garage:hover {
+  background: #1eb956;
+}
+
+/* Card de Taller en Tamulté */
+.garage-info-card {
+  background: var(--carbon-surface);
+  border: 1px solid var(--border-carbon);
+  border-radius: var(--radius-garage);
+  padding: 24px;
+  box-shadow: var(--shadow-garage);
+}
+
+.garage-info-card h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #d4d4d8;
+}
+
+.spec-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Selector Interactivo de Diagnóstico y Marcas */
+.section-wrap {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-title-wrap h2 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.section-title-wrap p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--carbon-surface);
+  border: 1px solid var(--border-carbon);
+  border-radius: var(--radius-garage);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  border-color: var(--racing-red);
+  transform: translateY(-3px);
+}
+
+.service-icon-box {
+  width: 44px;
+  height: 44px;
+  background: var(--carbon-card);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--racing-red);
+  margin-bottom: 14px;
+}
+
+.service-card h3 {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.service-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.service-meta-box {
+  background: #09090b;
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #27272a;
+  margin-bottom: 14px;
+}
+
+.price-tag-garage {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--racing-red);
+}
+
+.btn-select-service {
+  width: 100%;
+  background: var(--carbon-card);
+  color: #ffffff;
+  border: 1px solid var(--border-carbon);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-select-service:hover {
+  background: var(--racing-red);
+  border-color: var(--racing-red);
+}
+
+/* Agendamiento de Bahía con WhatsApp */
+.booking-garage-container {
+  background: var(--carbon-surface);
+  border: 2px solid var(--border-carbon);
+  border-radius: var(--radius-garage);
+  padding: 36px 24px;
+  max-width: 820px;
+  margin: 60px auto;
+  box-shadow: var(--shadow-garage);
+}
+
+.booking-garage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #d4d4d8;
+}
+
+.input-dark, .select-dark {
+  background: #09090b;
+  border: 1px solid var(--border-carbon);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.input-dark:focus, .select-dark:focus {
+  border-color: var(--racing-red);
+}
+
+.btn-submit-garage-wa {
+  grid-column: 1 / -1;
+  background: #25d366;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  margin-top: 10px;
+  transition: var(--transition);
+}
+
+.btn-submit-garage-wa:hover {
+  background: #1eb956;
+}
+
+/* Footer Garage */
+.garage-footer {
+  background: #09090b;
+  border-top: 1px solid var(--border-carbon);
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-muted);
+}

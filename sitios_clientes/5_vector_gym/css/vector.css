@@ -1,0 +1,444 @@
+/* Vector Gym Tabasco 2000: Sistema de Diseño Dark Neon Athletic */
+:root {
+  --neon-green: #22c55e;
+  --neon-green-glow: rgba(34, 197, 94, 0.35);
+  --obsidian-black: #09090b;
+  --obsidian-surface: #121215;
+  --obsidian-card: #18181b;
+  --obsidian-border: #27272a;
+  --text-white: #ffffff;
+  --text-dim: #a1a1aa;
+  --radius-gym: 14px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--obsidian-black);
+  color: #f4f4f5;
+  line-height: 1.5;
+}
+
+/* Banner Superior */
+.top-fitness-strip {
+  background: var(--neon-green);
+  color: #09090b;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Header */
+.gym-header {
+  background: rgba(18, 18, 21, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--obsidian-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gym-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.gym-logo-v {
+  width: 46px;
+  height: 46px;
+  background: #09090b;
+  border: 2px solid var(--neon-green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px var(--neon-green-glow);
+}
+
+.gym-titles h1 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.gym-titles span {
+  font-size: 0.72rem;
+  color: var(--neon-green);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-pass-header {
+  background: var(--neon-green);
+  color: #09090b;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 16px var(--neon-green-glow);
+  transition: var(--transition);
+}
+
+.btn-pass-header:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* Hero Dark Neon */
+.gym-hero {
+  background: radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 60%),
+              linear-gradient(180deg, #09090b 0%, #121215 100%);
+  padding: 70px 20px;
+  border-bottom: 1px solid var(--obsidian-border);
+}
+
+.hero-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.hero-pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.hero-heading {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-heading span {
+  color: var(--neon-green);
+}
+
+.hero-desc-gym {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  margin-bottom: 26px;
+}
+
+.hero-ctas-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero-ctas-row {
+    justify-content: center;
+  }
+}
+
+.btn-neon-action {
+  background: var(--neon-green);
+  color: #09090b;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 0 20px var(--neon-green-glow);
+  transition: var(--transition);
+}
+
+.btn-neon-action:hover {
+  filter: brightness(1.2);
+  transform: translateY(-2px);
+}
+
+/* Card de Pase VIP con QR Canvas */
+.vip-pass-generator-card {
+  background: var(--obsidian-surface);
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-gym);
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.vip-pass-generator-card h3 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.vip-pass-generator-card p {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+}
+
+.pass-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gym-input {
+  background: var(--obsidian-black);
+  border: 1px solid var(--obsidian-border);
+  color: #ffffff;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.gym-input:focus {
+  border-color: var(--neon-green);
+}
+
+/* Credencial Deportiva Generada */
+.vip-ticket-preview {
+  display: none;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+  border: 2px dashed var(--neon-green);
+  border-radius: 12px;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.2);
+}
+
+.vip-ticket-preview.active {
+  display: flex;
+}
+
+.ticket-data h4 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--neon-green);
+}
+
+.ticket-data span {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 4px 0;
+}
+
+.ticket-data p {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-family: monospace;
+  margin-bottom: 0;
+}
+
+.canvas-qr-wrapper {
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* Secciones de Áreas y Membresías */
+.content-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-headline {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-headline h2 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.section-headline p {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+/* Grid de Instalaciones Climatizadas */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.facility-card {
+  background: var(--obsidian-surface);
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-gym);
+  padding: 24px;
+  transition: var(--transition);
+}
+
+.facility-card:hover {
+  border-color: var(--neon-green);
+  transform: translateY(-3px);
+}
+
+.facility-card h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.facility-card p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+
+/* Grid de Membresías */
+.memberships-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.membership-card {
+  background: var(--obsidian-surface);
+  border: 1px solid var(--obsidian-border);
+  border-radius: var(--radius-gym);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition);
+}
+
+.membership-card.highlight {
+  border-color: var(--neon-green);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.15);
+}
+
+.card-ribbon-tag {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  background: var(--neon-green);
+  color: #09090b;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.membership-card h4 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.price-row-gym {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.price-val-gym {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--neon-green);
+}
+
+.perks-list-gym {
+  list-style: none;
+  font-size: 0.82rem;
+  color: #d4d4d8;
+  margin-bottom: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.perks-list-gym li::before {
+  content: "✓";
+  color: var(--neon-green);
+  font-weight: 900;
+  margin-right: 8px;
+}
+
+.btn-select-membership {
+  width: 100%;
+  background: var(--obsidian-card);
+  color: #ffffff;
+  border: 1px solid var(--obsidian-border);
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-select-membership:hover {
+  background: var(--neon-green);
+  color: #09090b;
+  border-color: var(--neon-green);
+}
+
+/* Footer Gym */
+.gym-footer {
+  background: #050507;
+  border-top: 1px solid var(--obsidian-border);
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text-dim);
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vector Gym Fitness Club | Alto Rendimiento en Tabasco 2000, Villahermosa</title>
+  <meta name="description" content="Gimnasio de alto rendimiento en Tabasco 2000, Villahermosa. Área de peso libre, salas climatizadas, spinning, cross-training y pase de 1 día gratis.">
+  <link rel="stylesheet" href="css/vector.css">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <div class="top-fitness-strip">
+    ⚡ INSTALACIONES 100% CLIMATIZADAS EN TABASCO 2000 | HORARIO EXTENDIDO 06:00 A 22:00 HRS
+  </div>
+
+  <!-- Header -->
+  <header class="gym-header">
+    <div class="header-container">
+      <a href="#" class="gym-brand">
+        <div class="gym-logo-v">
+          <!-- Isotipo Vectorial V Poligonal -->
+          <svg width="26" height="26" fill="none" stroke="var(--neon-green)" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="gym-titles">
+          <h1>VECTOR GYM</h1>
+          <span>Fitness Club • Tabasco 2000</span>
+        </div>
+      </a>
+
+      <div>
+        <a href="#pase-vip" class="btn-pass-header">
+          Obtener Pase VIP Gratis
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Dark Neon -->
+  <section class="gym-hero">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-pill-tag">
+          El Centro Fitness Más Completo de Villahermosa
+        </div>
+        <h2 class="hero-heading">
+          Rompe tus Límites en el <span>Mejor Ambiente</span> de Tabasco 2000
+        </h2>
+        <p class="hero-desc-gym">
+          Equipamiento biomecánico de uso rudo, peso libre hasta 120 lbs, racks olímpicos, salas refrigeradas para spinning y entrenadores certificados enfocados en tus resultados.
+        </p>
+
+        <div class="hero-ctas-row">
+          <a href="#pase-vip" class="btn-neon-action">Descargar Pase de 1 Día</a>
+          <a href="https://wa.me/529933151532?text=Hola%20Vector%20Gym,%20solicito%20informes%20de%20membres%C3%ADa%20en%20Tabasco%202000" target="_blank" style="color: #fff; text-decoration: underline; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+            📞 Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <!-- Card Generador de Pase VIP con QR Canvas -->
+      <div class="vip-pass-generator-card" id="pase-vip">
+        <h3>Pase VIP: Entrena 1 Día Gratis</h3>
+        <p>Genera tu boleto digital con código QR de acceso. Sin costos ocultos ni permanencia.</p>
+
+        <form id="vip-pass-form" class="pass-form-group">
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #a1a1aa; margin-bottom: 4px;">Nombre completo:</label>
+            <input type="text" id="athlete-name" class="gym-input" placeholder="Ej. Rodrigo Santamaría" required>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #a1a1aa; margin-bottom: 4px;">WhatsApp (para confirmación):</label>
+            <input type="tel" id="athlete-phone" class="gym-input" placeholder="Ej. 993 315 1532" required>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #a1a1aa; margin-bottom: 4px;">Objetivo principal:</label>
+            <select id="athlete-goal" class="gym-input">
+              <option value="Ganancia de Masa Muscular (Hipertrofia)">Ganancia de Masa Muscular (Hipertrofia)</option>
+              <option value="Quema de Grasa y Definición">Quema de Grasa y Definición</option>
+              <option value="Cross-Training y Resistencia">Cross-Training y Resistencia</option>
+              <option value="Salud, Movilidad y Antiestrés">Salud, Movilidad y Antiestrés</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-neon-action" style="width: 100%; border: none; cursor: pointer; margin-top: 8px;">
+            Generar Credencial con Código QR
+          </button>
+        </form>
+
+        <!-- Credencial Generada -->
+        <div class="vip-ticket-preview" id="vip-ticket-preview">
+          <div class="ticket-data">
+            <h4>VECTOR GYM VIP PASS</h4>
+            <span id="ticket-name-display">Nombre del Atleta</span>
+            <p id="ticket-code-display">FOLIO ACCESO: #VG-000000</p>
+            <p id="ticket-goal-display" style="color: var(--neon-green); margin-top: 4px;">Meta: Hipertrofia</p>
+          </div>
+
+          <div class="canvas-qr-wrapper">
+            <canvas id="canvas-ticket-qr"></canvas>
+          </div>
+        </div>
+
+        <button id="btn-claim-pass-wa" style="display: none; width: 100%; background: #25d366; color: #000; font-weight: 900; border: none; padding: 14px; border-radius: 8px; font-size: 0.95rem; cursor: pointer; align-items: center; justify-content: center; gap: 8px; margin-top: 14px;">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.81-.37-4.04-1.07l-.29-.17-3.11.82.83-3.03-.19-.32c-.78-1.28-1.19-2.77-1.19-4.29 0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.39-1.74-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.19-.48-.31z"/></svg>
+          Activar Pase en WhatsApp Vector Gym
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Áreas de Entrenamiento -->
+  <main class="content-section">
+    <div class="section-headline">
+      <h2>Zonas de Entrenamiento Especializado</h2>
+      <p>Espacios climatizados con flujo de aire continuo y sonido envolvente.</p>
+    </div>
+
+    <div class="facilities-grid">
+      <article class="facility-card">
+        <h3>Zona de Peso Libre e Hipertrofia</h3>
+        <p>Mancuernas de uretano desde 5 hasta 120 lbs, 4 bancas de press olímpico, jaulas de sentadillas Eleiko y barras cromadas olímpicas.</p>
+        <span style="color: var(--neon-green); font-size: 0.8rem; font-weight: 800;">✓ Racks sin filas</span>
+      </article>
+
+      <article class="facility-card">
+        <h3>Sala de Spinning Climatizada</h3>
+        <p>Bicicletas magnéticas de última generación, iluminación ambiental rítmica y clases guiadas por instructores certificados en horarios AM y PM.</p>
+        <span style="color: var(--neon-green); font-size: 0.8rem; font-weight: 800;">✓ Clima a 21°C</span>
+      </article>
+
+      <article class="facility-card">
+        <h3>Área Funcional & Cross-Training</h3>
+        <p>Pasto sintético para trineos de empuje, cuerdas de batalla, kettlebells, cajones pliométricos y barras de dominadas libres.</p>
+        <span style="color: var(--neon-green); font-size: 0.8rem; font-weight: 800;">✓ HIIT & Acondicionamiento</span>
+      </article>
+    </div>
+  </main>
+
+  <!-- Membresías Transparentes -->
+  <section class="content-section">
+    <div class="section-headline">
+      <h2>Membresías Flexibles Sin Contratos Forzosos</h2>
+      <p>Entrena cuando quieras con acceso libre a todas las instalaciones de Tabasco 2000.</p>
+    </div>
+
+    <div class="memberships-grid">
+
+      <!-- Plan Mensual -->
+      <article class="membership-card">
+        <h4>Mensualidad Libre</h4>
+        <div class="price-row-gym">
+          <span class="price-val-gym">$650</span>
+          <span style="color: var(--text-dim); font-size: 0.85rem;">/ mes</span>
+        </div>
+        <ul class="perks-list-gym">
+          <li>Acceso total a peso libre y cardio</li>
+          <li>Uso libre de regaderas y vestidores con locker</li>
+          <li>Horario completo: Lun-Vie 06:00 a 22:00</li>
+          <li>Rutina inicial de inducción con coach de piso</li>
+        </ul>
+        <button class="btn-select-membership" onclick="inquirePlan('Mensualidad Libre', '$650 MXN')">
+          Contratar por WhatsApp
+        </button>
+      </article>
+
+      <!-- Plan Trimestral Destacado -->
+      <article class="membership-card highlight">
+        <span class="card-ribbon-tag">Más Popular</span>
+        <h4>Plan Trimestre Pro</h4>
+        <div class="price-row-gym">
+          <span class="price-val-gym">$1,800</span>
+          <span style="color: var(--text-dim); font-size: 0.85rem;">/ 3 meses</span>
+        </div>
+        <ul class="perks-list-gym">
+          <li>Todo lo del plan mensual</li>
+          <li>Clases ilimitadas de Spinning y Funcional</li>
+          <li>Evaluación antropométrica y porcentaje de grasa</li>
+          <li>2 pases de cortesía para un amigo al mes</li>
+        </ul>
+        <button class="btn-select-membership" style="background: var(--neon-green); color: #09090b;" onclick="inquirePlan('Plan Trimestre Pro', '$1,800 MXN')">
+          Contratar por WhatsApp
+        </button>
+      </article>
+
+      <!-- Plan Anual -->
+      <article class="membership-card">
+        <h4>Pase Anual VIP</h4>
+        <div class="price-row-gym">
+          <span class="price-val-gym">$6,500</span>
+          <span style="color: var(--text-dim); font-size: 0.85rem;">/ año completo</span>
+        </div>
+        <ul class="perks-list-gym">
+          <li>Ahorro directo de $1,300 pesos al año</li>
+          <li>Congelación de membresía por viaje (hasta 30 días)</li>
+          <li>Playera deportiva oficial de Vector Gym</li>
+          <li>Acceso prioritario a talleres y clínicas de nutrición</li>
+        </ul>
+        <button class="btn-select-membership" onclick="inquirePlan('Pase Anual VIP', '$6,500 MXN')">
+          Contratar por WhatsApp
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Footer Gym -->
+  <footer class="gym-footer">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <p style="font-size: 1.1rem; font-weight: 900; color: #fff;">Vector Gym Fitness Club</p>
+      <p style="margin-top: 4px;">Retorno Vía 5 No. 120, Galaxia / Tabasco 2000, Villahermosa, Tabasco</p>
+      <p style="margin-top: 6px;">WhatsApp Recepción: <strong>(993) 315-1532</strong> | Horario: 06:00 a 22:00 hrs</p>
+    </div>
+  </footer>
+
+  <script src="js/vector.js"></script>
+</body>
+</html>
